@@ -1,0 +1,23 @@
+{
+  "name": "honeybadger-lambda-node",
+  "version": "0.0.1",
+  "description": "A Node template for AWS Lamda which reports errors to Honeybadger.io",
+  "main": "lambda.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "honeybadger": "^0.9.1",
+    "promise": "^7.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "nock": "^7.0.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "josh@honeybadger.io",
+  "license": "MIT"
+}
