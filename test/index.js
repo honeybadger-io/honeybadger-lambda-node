@@ -5,8 +5,8 @@ var index = require("../index")
 var sampleEvent = require("./sample_event.json")
 
 describe("logplex", function() {
-  describe("#handler()", function () {
-    it("should notify Honeybadger of exceptions", function (done) {
+  describe("#handler()", function() {
+    it("should notify Honeybadger of exceptions", function(done) {
       var api = nock("https://api.honeybadger.io")
       .post("/v1/notices")
       .reply(201, '{"id":"1a327bf6-e17a-40c1-ad79-404ea1489c7a"}')
@@ -21,7 +21,7 @@ describe("logplex", function() {
         }
       };
 
-     index.handler(sampleEvent, context);
+      index.handler(sampleEvent, context);
     });
   });
 });

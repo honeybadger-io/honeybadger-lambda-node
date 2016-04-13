@@ -19,16 +19,22 @@ function makeHandler(handler, api_key) {
   }
 
   return function errorHandler(event, context) {
-    try {
-      handler.apply(this, arguments);
-    } catch(err) {
+    var dom = require('domain').create();
+
+    dom.on('error', function(err) {
       send(err, { context: { event: event } }).then(function() {
         context.fail(err);
       }).catch(function(sendErr) {
         console.error("Unable to report error to Honeybadger:", sendErr)
         context.fail(err);
       });
-    }
+    });
+
+    handler = dom.bind(handler);
+
+    process.nextTick(function() {
+      handler.apply(this, arguments);
+    });
   }
 }
 
