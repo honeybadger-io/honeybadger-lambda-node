@@ -1,7 +1,9 @@
-const errorHandler = require('./error_handler')
+const Honeybadger = require('honeybadger');
 
-// Change to your Honeybadger.io API key.
-const HB_API_KEY = 'your api key';
+Honeybadger.configure({
+  // Change to your Honeybadger.io API key.
+  apiKey: 'your api key'
+});
 
 console.log("Loading function");
 
@@ -14,4 +16,4 @@ function handler(event, context) {
 }
 
 // Build and export the function.
-exports.handler = errorHandler(handler, HB_API_KEY);
+exports.handler = Honeybadger.lambdaHandler(handler);

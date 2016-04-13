@@ -7,7 +7,7 @@
     "test": "test"
   },
   "dependencies": {
-    "honeybadger": "^0.9.1",
+    "honeybadger": "honeybadger-io/honeybadger-node#rewrite",
     "promise": "^7.1.1"
   },
   "devDependencies": {
