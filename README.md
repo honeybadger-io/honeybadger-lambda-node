@@ -18,6 +18,10 @@ config:
 - Memory: 128mb
 - Timeout: 3
 
+## Support
+
+Create an issue on [honeybadger-io/honeybadger-node](https://github.com/honeybadger-io/honeybadger-node/issues) or email support@honeybadger.io.
+
 ## Running the tests
 
 ```sh
