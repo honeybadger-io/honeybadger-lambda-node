@@ -1,13 +1,15 @@
-const Honeybadger = require('honeybadger');
+// Configure they API key for your Honeybadger project.
+const HONEYBADGER_API_KEY = 'change me'
+
+const Honeybadger = require("honeybadger");
 
 Honeybadger.configure({
-  // Change to your Honeybadger.io API key.
-  apiKey: 'your api key'
+  developmentEnvironments: [],
+  apiKey: HONEYBADGER_API_KEY,
 });
 
 console.log("Loading function");
 
-// Your handler function.
 function handler(event, context) {
   console.log("Event:", event);
   console.log("Context:", context);
@@ -15,5 +17,4 @@ function handler(event, context) {
   console.log("Shouldn't make it here.");
 }
 
-// Build and export the function.
 exports.handler = Honeybadger.lambdaHandler(handler);
