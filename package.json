@@ -7,7 +7,7 @@
     "test": "test"
   },
   "dependencies": {
-    "honeybadger": "^1.0.0",
+    "honeybadger": "^1.4.0",
     "promise": "^7.1.1"
   },
   "devDependencies": {

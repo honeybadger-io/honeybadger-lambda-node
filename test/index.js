@@ -11,17 +11,10 @@ describe("logplex", function() {
       .post("/v1/notices")
       .reply(201, '{"id":"1a327bf6-e17a-40c1-ad79-404ea1489c7a"}')
 
-      var context = {
-        succeed: function() {
-          done("should never succeed.");
-        },
-        fail: function(err) {
-          api.done();
-          done();
-        }
-      };
-
-      index.handler(sampleEvent, context);
+      index.handler(sampleEvent, {}, function(err) {
+        api.done();
+        done();
+      });
     });
   });
 });
