@@ -1,10 +1,10 @@
 // Configure they API key for your Honeybadger project.
-const HONEYBADGER_API_KEY = "change me"
+const HONEYBADGER_API_KEY = "change me";
 
-const Honeybadger = require("honeybadger");
+const Honeybadger = require("@honeybadger-io/js");
 
 Honeybadger.configure({
-  developmentEnvironments: [],
+  reportData: true,
   apiKey: HONEYBADGER_API_KEY,
 });
 
