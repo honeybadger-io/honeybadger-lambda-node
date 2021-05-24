@@ -8,7 +8,7 @@ describe("logplex", function() {
   describe("#handler()", function() {
     it("should notify Honeybadger of exceptions", function(done) {
       var api = nock("https://api.honeybadger.io")
-        .post("/v1/notices")
+        .post("/v1/notices/js")
         .reply(201, '{"id":"1a327bf6-e17a-40c1-ad79-404ea1489c7a"}');
 
       index.handler(sampleEvent, {}, function(err) {
