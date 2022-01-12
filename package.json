@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "mocha": "^2.4.5",
-    "nock": "^13.2.1"
+    "nock": "^13.2.2"
   },
   "scripts": {
     "test": "mocha"
